@@ -11,6 +11,7 @@ import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import Image from 'next/image';
 import logo from 'src/Images/logo.png'
+import Link from 'next/link';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -51,17 +52,19 @@ export const RootStyle = ({ children }: PropsWithChildren) => {
   return (
     <Layout style={{ minHeight: '100vh' }} hasSider>
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <div style={{ textAlign: 'center' }}>
-          {!collapsed ? (
-            <Image src={logo} alt="Company Logo" width={120} height={120}
-              className='transition-all duration-1000 ease-in-out' 
-              style={{ visibility: collapsed ? 'hidden' : 'visible' }} />
-          ) : (
-            <Image src={logo} alt="Company Logo" width={50} height={50} 
-              className='transition-all duration-1000 ease-in-out' 
-              style={{ visibility: !collapsed ? 'hidden' : 'visible' }} />
-          )}
-        </div>
+        <Link href="/">
+          <div style={{ textAlign: 'center' }}>
+            {!collapsed ? (
+              <Image src={logo} alt="Company Logo" width={120} height={120}
+                className='transition-all duration-1000 ease-in-out' 
+                style={{ visibility: collapsed ? 'hidden' : 'visible' }} />
+            ) : (
+              <Image src={logo} alt="Company Logo" width={50} height={50} 
+                className='transition-all duration-1000 ease-in-out' 
+                style={{ visibility: !collapsed ? 'hidden' : 'visible' }} />
+            )}
+          </div>
+        </Link>
         <div className="demo-logo-vertical" />
         <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
       </Sider>
