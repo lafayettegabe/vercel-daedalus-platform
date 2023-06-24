@@ -64,13 +64,13 @@ export const RootStyle = ({ children }: PropsWithChildren) => {
   } = theme.useToken();
 
   const handleMenuOpenChange = (keys: React.Key[]) => {
-    const latestOpenKey = keys.find((key) => !openKeys.includes(key as string));
-    if (latestOpenKey && latestOpenKey.includes('sub')) {
-      setOpenKeys([latestOpenKey as string]); // Update the open keys state with the latest open key
+    const latestOpenKey = keys.find((key) => !openKeys.includes(String(key)));
+    if (latestOpenKey && String(latestOpenKey).includes('sub')) {
+      setOpenKeys([String(latestOpenKey)]); // Update the open keys state with the latest open key
     } else {
       setOpenKeys([]); // Close all submenus if no valid submenu key is selected
     }
-  };
+  };  
 
   return (
     <Layout style={{ minHeight: '100vh' }} hasSider>
