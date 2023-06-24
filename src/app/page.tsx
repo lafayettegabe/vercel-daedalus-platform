@@ -1,4 +1,5 @@
 'use client'
+import { AuthCheck } from '@/modules/shared/AuthCheck';
 import React, { useEffect, useState } from 'react';
 
 // const url = "http://127.0.0.1:8000/"
@@ -175,4 +176,4 @@ const QRCodeComponent = () => {
   );
 };
 
-export default QRCodeComponent;
+export default AuthCheck(QRCodeComponent);
