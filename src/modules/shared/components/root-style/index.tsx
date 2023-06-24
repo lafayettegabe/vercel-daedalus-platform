@@ -1,7 +1,7 @@
 'use client';
 import React, { PropsWithChildren, useState } from 'react';
 import {
-  FileOutlined,
+  CodeOutlined,
   PieChartOutlined,
   UserOutlined,
   RobotOutlined,
@@ -10,8 +10,6 @@ import {
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
-import Image from 'next/image';
-import logo from 'src/Images/logo.png'
 import Link from 'next/link';
 import Logo from '../Logo';
 
@@ -55,6 +53,7 @@ const items: MenuItem[] = [
     getItem('Speech Recognition', '13'),
     getItem('Voice Synthesis', '14'),
   ]),
+  getItem('Developers', '15', <CodeOutlined />),
 ];
 
 export const RootStyle = ({ children }: PropsWithChildren) => {
