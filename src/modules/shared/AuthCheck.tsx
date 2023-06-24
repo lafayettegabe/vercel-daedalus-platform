@@ -1,3 +1,4 @@
+'use client'
 import { useRouter } from 'next/navigation';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../Firebase';
