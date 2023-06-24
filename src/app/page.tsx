@@ -1,4 +1,5 @@
 'use client'
+import { useRouter } from 'next/navigation';
 import { AuthCheck } from '@/modules/shared/AuthCheck';
 import React, { useEffect, useState } from 'react';
 
@@ -13,6 +14,7 @@ const url_login = url + 'bot/login/';
 const ExcelUploader = ({ uid }: { uid: string }) => {
   const [numbers, setNumbers] = useState<string>('');
   const [data, setData] = useState<any[]>([]);
+  const Router = useRouter();
 
   const handleNumbersChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNumbers(event.target.value);
