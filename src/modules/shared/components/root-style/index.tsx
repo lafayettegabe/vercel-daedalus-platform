@@ -34,28 +34,25 @@ function getItem(
 
 const items: MenuItem[] = [
   getItem('Dashboard', '1', <PieChartOutlined />),
-  getItem('Account', 'sub1', <UserOutlined />, [
-    getItem('Profile', '3'),
-    getItem('Payments', '4'),
-    getItem('Settings', '5'),
-  ]),
   getItem('Chat', '6', <WechatOutlined />),
   getItem('Chatbots', 'sub2', <RobotOutlined />, [
     getItem('Bots', '7'), 
-    getItem('Templates', '8')
+    getItem('Templates', '8'),
+    getItem('Integrations', '9'),
+    getItem('Management', '10'),
   ]),
   getItem('Vision', 'sub3', <EyeOutlined />, [
-    getItem('Face Detection', '9'),
-    getItem('Image Labeling', '10'),
-    getItem('Text Recognition', '11'),
-    getItem('Live Tracking', '12'),
-    getItem('Barcode Scanning', '13'),
+    getItem('Face Detection', '11'),
+    getItem('Image Labeling', '12'),
+    getItem('Text Recognition', '13'),
+    getItem('Live Tracking', '14'),
+    getItem('Barcode Scanning', '15'),
   ]),
   getItem('Voice', 'sub4', <AudioOutlined />, [
-    getItem('Speech Recognition', '14'),
-    getItem('Voice Synthesis', '15'),
+    getItem('Speech Recognition', '16'),
+    getItem('Voice Synthesis', '17'),
   ]),
-  getItem('Developers', '16', <CodeOutlined />),
+  getItem('Developers', '18', <CodeOutlined />),
 ];
 
 export const RootStyle = ({ children }: PropsWithChildren) => {
