@@ -7,6 +7,7 @@ import {
   RobotOutlined,
   EyeOutlined,
   AudioOutlined,
+  WechatOutlined,
 } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
@@ -38,22 +39,23 @@ const items: MenuItem[] = [
     getItem('Payments', '4'),
     getItem('Settings', '5'),
   ]),
+  getItem('Chat', '6', <WechatOutlined />),
   getItem('Chatbots', 'sub2', <RobotOutlined />, [
-    getItem('Bots', '6'), 
-    getItem('Templates', '7')
+    getItem('Bots', '7'), 
+    getItem('Templates', '8')
   ]),
   getItem('Vision', 'sub3', <EyeOutlined />, [
-    getItem('Face Detection', '8'),
-    getItem('Image Labeling', '9'),
-    getItem('Text Recognition', '10'),
-    getItem('Live Tracking', '11'),
-    getItem('Barcode Scanning', '12'),
+    getItem('Face Detection', '9'),
+    getItem('Image Labeling', '10'),
+    getItem('Text Recognition', '11'),
+    getItem('Live Tracking', '12'),
+    getItem('Barcode Scanning', '13'),
   ]),
   getItem('Voice', 'sub4', <AudioOutlined />, [
-    getItem('Speech Recognition', '13'),
-    getItem('Voice Synthesis', '14'),
+    getItem('Speech Recognition', '14'),
+    getItem('Voice Synthesis', '15'),
   ]),
-  getItem('Developers', '15', <CodeOutlined />),
+  getItem('Developers', '16', <CodeOutlined />),
 ];
 
 export const RootStyle = ({ children }: PropsWithChildren) => {
