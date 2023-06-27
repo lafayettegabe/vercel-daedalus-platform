@@ -74,9 +74,11 @@ export const RootStyle = ({ children }: PropsWithChildren) => {
   return (
     <Layout style={{ minHeight: '100vh' }} hasSider>
       <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <Link href="/">
-          <Logo collapsed={collapsed} />
-        </Link>
+       <div style={{ marginTop: 14, marginBottom: 14 }}>
+          <Link href="/">
+            <Logo collapsed={collapsed} />
+          </Link>
+        </div>
         <div className="demo-logo-vertical" />
         <Menu
           theme="dark"
