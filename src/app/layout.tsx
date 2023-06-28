@@ -19,7 +19,11 @@ export default function RootLayout({ children }: PropsWithChildren) {
   
   return (
     <html lang="es">
-      <head />
+      <head>
+        <title>D | Platform</title>
+        <meta title="Daedalus Platform" />
+        <meta name="description" content="Daedalus Platform is a platform for AI research and development" />
+      </head>
       <body style={{ margin: 0 }}>
         <RootStyleRegistry>
           {user ? <RootStyle>{children}</RootStyle> : <LoginStyle>{children}</LoginStyle>}
