@@ -13,10 +13,11 @@ import type { MenuProps } from 'antd';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import Link from 'next/link';
 import Logo from '../Logo';
+import { useRouter } from 'next/navigation';
 
 const { Header, Content, Footer, Sider } = Layout;
 
-type MenuItem = Required<MenuProps>['items'][number];
+type MenuItem = Required<MenuProps>['items'][number]
 
 function getItem(
   label: React.ReactNode,
@@ -33,29 +34,30 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-  getItem('Dashboard', '1', <PieChartOutlined />),
-  getItem('Chat', '6', <WechatOutlined />),
-  getItem('Chatbots', 'sub2', <RobotOutlined />, [
-    getItem('Bots', '7'), 
-    getItem('Templates', '8'),
-    getItem('Integrations', '9'),
-    getItem('Management', '10'),
+  getItem('Dashboard',            '/', <PieChartOutlined />),
+  getItem('Chat',                 '/chat', <WechatOutlined />),
+  getItem('Chatbots',             'sub1', <RobotOutlined />, [
+    getItem('Bots',               '/chatbots/bots'),
+    getItem('Templates',          '/chatbots/templates'),
+    getItem('Integrations',       '/chatbots/integrations'),
+    getItem('Management',         '/chatbots/management'),
   ]),
-  getItem('Vision', 'sub3', <EyeOutlined />, [
-    getItem('Face Detection', '11'),
-    getItem('Image Labeling', '12'),
-    getItem('Text Recognition', '13'),
-    getItem('Live Tracking', '14'),
-    getItem('Barcode Scanning', '15'),
+  getItem('Vision',               'sub2', <EyeOutlined />, [
+    getItem('Face Detection',     '/vision/face-detection'),
+    getItem('Image Labeling',     '/vision/image-labeling'),
+    getItem('Text Recognition',   '/vision/text-recognition'),
+    getItem('Live Tracking',      '/vision/live-tracking'),
+    getItem('Barcode Scanning',   '/vision/barcode-scanning'),
   ]),
-  getItem('Voice', 'sub4', <AudioOutlined />, [
-    getItem('Speech Recognition', '16'),
-    getItem('Voice Synthesis', '17'),
+  getItem('Voice',                'sub3', <AudioOutlined />, [
+    getItem('Speech Recognition', '/voice/speech-recognition'),
+    getItem('Voice Synthesis',    '/voice/voice-synthesis'),
   ]),
-  getItem('Developers', '18', <CodeOutlined />),
+  getItem('Developers',           '/developers', <CodeOutlined />),
 ];
 
 export const RootStyle = ({ children }: PropsWithChildren) => {
+  const router = useRouter()
   const [collapsed, setCollapsed] = useState(false);
   const [openKeys, setOpenKeys] = useState<string[]>([]); // Added state for open keys
   const {
@@ -87,6 +89,7 @@ export const RootStyle = ({ children }: PropsWithChildren) => {
           items={items}
           openKeys={openKeys} // Pass the open keys state to the Menu component
           onOpenChange={handleMenuOpenChange} // Handle submenu open changes
+          onClick={({ key }) => router.push(key as string)}
         />
       </Sider>
       <Layout>
