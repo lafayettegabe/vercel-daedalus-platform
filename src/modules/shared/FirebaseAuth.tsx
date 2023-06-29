@@ -3,6 +3,8 @@ import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../Firebase';
 import { useRouter } from 'next/navigation';
+import GButton from 'src/Images/GButton.png';
+import Image from 'next/image';
 
 interface User {
   uid: string;
@@ -23,8 +25,8 @@ const FirebaseAuth: React.FC = () => {
 
   return (
     <div>
-        <button className="rounded-full bg-blue-500 text-white px-4 py-2" onClick={login}>
-          LOGIN
+        <button onClick={login} style={{ border: 'none', background: 'none' }}>
+          <Image src={GButton} alt="Google Login" width={250} height={65} />
         </button>
     </div>
   );
